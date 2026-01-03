@@ -16,14 +16,16 @@ const newArrivals: Product[] = [
     name: 'Kiwi Vàng',
     price: 180000,
     image: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=400',
-    tag: 'Hot'
+    tag: 'Hot',
+    category: 'Trái Cây',
   },
   {
     id: 3,
     name: 'Lê Hàn Quốc',
     price: 120000,
     image: 'https://images.unsplash.com/photo-1633332837443-62967499564c?w=400',
-    tag: 'Mới về'
+    tag: 'Mới về',
+    category: 'Trái Cây',
   },
   {
     id: 4,

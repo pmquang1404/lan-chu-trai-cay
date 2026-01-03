@@ -19,6 +19,7 @@ const featuredProducts: Product[] = [
         originalPrice: 300000,
         image: 'https://images.unsplash.com/photo-1596363505729-4190a9506133?w=400',
         reviews: 3200,
+        category: 'Trái Cây',
     },
     {
         id: 3,
@@ -26,6 +27,7 @@ const featuredProducts: Product[] = [
         price: 45000,
         image: 'https://images.unsplash.com/photo-1589984662646-e7b2e4962f18?w=400',
         reviews: 2800,
+        category: 'Trái Cây',
     },
     {
         id: 4,
@@ -33,6 +35,7 @@ const featuredProducts: Product[] = [
         price: 180000,
         image: 'https://images.unsplash.com/photo-1625995920830-350a0e44e166?w=400',
         reviews: 5100,
+        category: 'Trái Cây',
     },
     {
         id: 5,
@@ -41,6 +44,7 @@ const featuredProducts: Product[] = [
         originalPrice: 120000,
         image: 'https://images.unsplash.com/photo-1547514701-42782101795e?w=400',
         reviews: 3600,
+        category: 'Trái Cây',
     },
     {
         id: 6,
@@ -48,6 +52,7 @@ const featuredProducts: Product[] = [
         price: 150000,
         image: 'https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=400',
         reviews: 4200,
+        category: 'Trái Cây',
     },
     {
         id: 7,
@@ -55,6 +60,7 @@ const featuredProducts: Product[] = [
         price: 85000,
         image: 'https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=400',
         reviews: 3800,
+        category: 'Trái Cây',
     },
     {
         id: 8,
