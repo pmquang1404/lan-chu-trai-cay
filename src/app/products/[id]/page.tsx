@@ -1,19 +1,27 @@
 'use client';
 
-import React, { use } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import { products } from '@/lib/data';
 import { formatCurrency } from '@/lib/utils';
 import ProductCard from '@/components/ui/ProductCard';
 
-export default function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = use(params);
+export default function ProductDetailPage() {
+  const params = useParams();
+  const id = params.id as string;
   const product = products.find((p) => p.id === parseInt(id));
 
   if (!product) {
-    notFound();
+    return (
+      <div className="min-h-screen pt-32 container-center text-center">
+        <h1 className="text-2xl text-gray-900 mb-4">Không tìm thấy sản phẩm</h1>
+        <Link href="/products" className="text-primary hover:underline">
+          ← Quay lại trang sản phẩm
+        </Link>
+      </div>
+    );
   }
 
   const relatedProducts = products

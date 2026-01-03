@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8 border-t border-gray-800 mt-auto">
@@ -79,8 +81,8 @@ export default function Footer() {
             © 2026 Lan Chu Trái Cây. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0 text-sm text-gray-500">
-            <a href="#" className="hover:text-green-500 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-green-500 transition-colors">Terms of Service</a>
+            <Link href="#" className="hover:text-green-500 transition-colors">Privacy Policy</Link>
+            <Link href="#" className="hover:text-green-500 transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>
@@ -104,8 +106,8 @@ function SocialIcon({ href, label, children }: { href: string; label: string; ch
 
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <a href={href} className="hover:text-green-400 hover:pl-1 transition-all duration-200 block">
+    <Link href={href} className="hover:text-green-400 hover:pl-1 transition-all duration-200 block">
       {children}
-    </a>
+    </Link>
   );
 }
