@@ -10,24 +10,11 @@ function ProductsContent() {
   const router = useRouter();
   
   // Filter states
-  const [selectedCategory, setSelectedCategory] = useState('Tất cả');
+  const selectedCategory = searchParams.get('category') || 'Tất cả';
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 1000000]);
   const [sortBy, setSortBy] = useState('newest');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState(searchParams.get('q') || '');
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
-
-  // Initialize from URL params
-  useEffect(() => {
-    const categoryParam = searchParams.get('category');
-    if (categoryParam) {
-      setSelectedCategory(categoryParam);
-    }
-    
-    const searchParam = searchParams.get('q');
-    if (searchParam) {
-      setSearchQuery(searchParam);
-    }
-  }, [searchParams]);
 
   // Update URL when filters change
   const updateUrl = (category: string) => {
@@ -41,7 +28,6 @@ function ProductsContent() {
   };
 
   const handleCategoryChange = (category: string) => {
-    setSelectedCategory(category);
     updateUrl(category);
     setIsMobileFilterOpen(false);
   };
@@ -198,7 +184,6 @@ function ProductsContent() {
                 <p className="text-gray-500">Vui lòng thử lại với bộ lọc khác.</p>
                 <button 
                   onClick={() => {
-                    setSelectedCategory('Tất cả');
                     setPriceRange([0, 1000000]);
                     setSearchQuery('');
                     updateUrl('Tất cả');
