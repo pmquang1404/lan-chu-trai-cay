@@ -55,7 +55,7 @@ const featuredProducts: Product[] = [
         category: 'Trái Cây',
     },
     {
-        id: 7,
+        id: 11,
         name: 'Xoài Cát Hòa Lộc',
         price: 85000,
         image: 'https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=400',
@@ -63,7 +63,7 @@ const featuredProducts: Product[] = [
         category: 'Trái Cây',
     },
     {
-        id: 8,
+        id: 12,
         name: 'Bơ Booth Úc',
         price: 65000,
         originalPrice: 80000,

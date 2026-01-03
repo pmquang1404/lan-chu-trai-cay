@@ -4,7 +4,7 @@ import { Product } from '@/types/product';
 
 const newArrivals: Product[] = [
   {
-    id: 1,
+    id: 7,
     name: 'Cherry New Zealand',
     price: 450000,
     image: 'https://images.unsplash.com/photo-1528821128474-27f963b0bdd4?w=400',
@@ -12,7 +12,7 @@ const newArrivals: Product[] = [
     category: 'Trái Cây',
   },
   {
-    id: 2,
+    id: 8,
     name: 'Kiwi Vàng',
     price: 180000,
     image: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=400',
@@ -20,7 +20,7 @@ const newArrivals: Product[] = [
     category: 'Trái Cây',
   },
   {
-    id: 3,
+    id: 9,
     name: 'Lê Hàn Quốc',
     price: 120000,
     image: 'https://images.unsplash.com/photo-1633332837443-62967499564c?w=400',
@@ -28,7 +28,7 @@ const newArrivals: Product[] = [
     category: 'Trái Cây',
   },
   {
-    id: 4,
+    id: 10,
     name: 'Việt Quất Peru',
     price: 150000,
     image: 'https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=400',
