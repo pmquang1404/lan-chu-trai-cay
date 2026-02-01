@@ -6,7 +6,7 @@ import RightBanner from '@/components/home/RightBanner';
 import Categories from '@/components/home/Categories';
 import DealTimer from '@/components/home/DealTimer';
 import FeaturedProducts from '@/components/home/FeaturedProducts';
-import NewArrivals from '@/components/home/NewArrivals';
+
 import Testimonials from '@/components/home/Testimonials';
 import GoogleMap from '@/components/home/GoogleMap';
 import Newsletter from '@/components/home/Newsletter';
@@ -14,6 +14,9 @@ import Newsletter from '@/components/home/Newsletter';
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
+      {/* Categories Section - Moved Top */}
+      <Categories />
+
       {/* Hero Section with Grid Layout */}
       <section className="pt-6 pb-8 lg:pt-8 lg:pb-12 bg-gray-50">
         <div className="container-center">
@@ -25,8 +28,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Categories Section */}
-      <Categories />
+
 
       {/* Flash Deal Timer */}
       <DealTimer />
@@ -34,8 +36,7 @@ export default function Home() {
       {/* Featured Products */}
       <FeaturedProducts />
 
-      {/* New Arrivals */}
-      <NewArrivals />
+
 
       {/* Why Choose Us - Features */}
       <section className="py-16 bg-white">

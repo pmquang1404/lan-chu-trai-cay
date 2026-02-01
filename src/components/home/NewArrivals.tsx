@@ -1,41 +1,7 @@
-import React from 'react';
+import { products } from '@/data/products';
 import ProductCard from '@/components/ui/ProductCard';
-import { Product } from '@/types/product';
 
-const newArrivals: Product[] = [
-  {
-    id: 7,
-    name: 'Cherry New Zealand',
-    price: 450000,
-    image: 'https://images.unsplash.com/photo-1528821128474-27f963b0bdd4?w=400',
-    tag: 'Mới về',
-    category: 'Trái Cây',
-  },
-  {
-    id: 8,
-    name: 'Kiwi Vàng',
-    price: 180000,
-    image: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=400',
-    tag: 'Hot',
-    category: 'Trái Cây',
-  },
-  {
-    id: 9,
-    name: 'Lê Hàn Quốc',
-    price: 120000,
-    image: 'https://images.unsplash.com/photo-1633332837443-62967499564c?w=400',
-    tag: 'Mới về',
-    category: 'Trái Cây',
-  },
-  {
-    id: 10,
-    name: 'Việt Quất Peru',
-    price: 150000,
-    image: 'https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=400',
-    tag: 'Best Seller',
-    category: 'Trái Cây',
-  }
-];
+const newArrivals = products.slice(0, 4);
 
 export default function NewArrivals() {
   return (
@@ -56,7 +22,7 @@ export default function NewArrivals() {
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
-        
+
         <div className="mt-8 text-center md:hidden">
           <button className="text-primary font-bold hover:underline">
             Xem tất cả &rarr;

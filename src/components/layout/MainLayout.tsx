@@ -11,23 +11,7 @@ interface MainLayoutProps {
 
 export default function MainLayout({ children }: MainLayoutProps) {
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [cartItems, setCartItems] = useState<CartItem[]>([
-    // Demo data - remove in production
-    {
-      id: 1,
-      name: 'Táo Fuji Nhật Bản',
-      price: 120000,
-      quantity: 2,
-      image: 'https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=400',
-    },
-    {
-      id: 2,
-      name: 'Nho Mỹ Đỏ',
-      price: 250000,
-      quantity: 1,
-      image: 'https://images.unsplash.com/photo-1596363505729-4190a9506133?w=400',
-    },
-  ]);
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   const handleCartToggle = () => {
     setIsCartOpen(!isCartOpen);

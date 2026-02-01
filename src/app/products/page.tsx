@@ -1,17 +1,26 @@
 'use client';
 
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
-import { products, categories } from '@/lib/data';
+import { products } from '@/data/products'; // New data source
 import ProductCard from '@/components/ui/ProductCard';
+
+// Category mapping for sidebar
+const categories = [
+  { id: 'all', label: 'Tất cả' },
+  { id: 'fruit', label: 'Trái Cây' },
+  { id: 'fruit-basket', label: 'Giỏ Trái Cây' },
+  { id: 'wedding', label: 'Cưới Hỏi' },
+  { id: 'gift-basket', label: 'Giỏ Quà Tặng' },
+];
 
 function ProductsContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  
+
   // Filter states
-  const selectedCategory = searchParams.get('category') || 'Tất cả';
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 1000000]);
+  const selectedCategory = searchParams.get('category') || 'all';
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 15000000]); // Increased max price for wedding trays
   const [sortBy, setSortBy] = useState('newest');
   const [searchQuery, setSearchQuery] = useState(searchParams.get('q') || '');
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
@@ -19,7 +28,7 @@ function ProductsContent() {
   // Update URL when filters change
   const updateUrl = (category: string) => {
     const params = new URLSearchParams(searchParams.toString());
-    if (category === 'Tất cả') {
+    if (category === 'all') {
       params.delete('category');
     } else {
       params.set('category', category);
@@ -35,20 +44,20 @@ function ProductsContent() {
   // Filter logic
   const filteredProducts = products.filter((product) => {
     // Category filter
-    if (selectedCategory !== 'Tất cả' && product.category !== selectedCategory) {
+    if (selectedCategory !== 'all' && product.category !== selectedCategory) {
       return false;
     }
-    
+
     // Price filter
     if (product.price < priceRange[0] || product.price > priceRange[1]) {
       return false;
     }
-    
+
     // Search filter
     if (searchQuery && !product.name.toLowerCase().includes(searchQuery.toLowerCase())) {
       return false;
     }
-    
+
     return true;
   }).sort((a, b) => {
     // Sort logic
@@ -63,7 +72,7 @@ function ProductsContent() {
   return (
     <div className="bg-gray-50 min-h-screen pb-20">
       {/* Header Banner */}
-      <div className="bg-primary text-white py-12 mb-8">
+      <div className="bg-green-600 text-white py-12 mb-8">
         <div className="container-center text-center">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">Cửa Hàng Trái Cây</h1>
           <p className="text-white/80 max-w-2xl mx-auto">
@@ -76,7 +85,7 @@ function ProductsContent() {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Mobile Filter Toggle */}
           <div className="lg:hidden mb-4">
-            <button 
+            <button
               onClick={() => setIsMobileFilterOpen(!isMobileFilterOpen)}
               className="w-full bg-white p-4 rounded-xl shadow-sm flex items-center justify-between font-bold text-gray-800"
             >
@@ -93,17 +102,16 @@ function ProductsContent() {
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
               <h3 className="font-bold text-lg mb-4 text-gray-900 border-b pb-2">Danh Mục</h3>
               <ul className="space-y-2">
-                {categories.map((category) => (
-                  <li key={category}>
+                {categories.map((cat) => (
+                  <li key={cat.id}>
                     <button
-                      onClick={() => handleCategoryChange(category)}
-                      className={`w-full text-left px-3 py-2 rounded-lg transition-colors ${
-                        selectedCategory === category
-                          ? 'bg-primary/10 text-primary font-bold'
+                      onClick={() => handleCategoryChange(cat.id)}
+                      className={`w-full text-left px-3 py-2 rounded-lg transition-colors ${selectedCategory === cat.id
+                          ? 'bg-green-50 text-green-700 font-bold'
                           : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                      }`}
+                        }`}
                     >
-                      {category}
+                      {cat.label}
                     </button>
                   </li>
                 ))}
@@ -116,18 +124,18 @@ function ProductsContent() {
               <div className="space-y-4">
                 <div className="flex items-center justify-between text-sm text-gray-600">
                   <span>0đ</span>
-                  <span>1.000.000đ+</span>
+                  <span>15tr+</span>
                 </div>
                 <input
                   type="range"
                   min="0"
-                  max="1000000"
-                  step="50000"
+                  max="15000000"
+                  step="100000"
                   value={priceRange[1]}
                   onChange={(e) => setPriceRange([priceRange[0], parseInt(e.target.value)])}
-                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
+                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-green-600"
                 />
-                <div className="text-center font-bold text-primary">
+                <div className="text-center font-bold text-green-700">
                   0đ - {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(priceRange[1])}
                 </div>
               </div>
@@ -141,7 +149,7 @@ function ProductsContent() {
               <div className="text-gray-600">
                 Hiển thị <span className="font-bold text-gray-900">{filteredProducts.length}</span> sản phẩm
               </div>
-              
+
               <div className="flex items-center gap-4 w-full sm:w-auto">
                 <div className="relative flex-1 sm:flex-none">
                   <input
@@ -149,17 +157,17 @@ function ProductsContent() {
                     placeholder="Tìm kiếm..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                    className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500/50"
                   />
                   <svg className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                   </svg>
                 </div>
-                
+
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50 bg-white"
+                  className="px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500/50 bg-white"
                 >
                   <option value="newest">Mới nhất</option>
                   <option value="price-asc">Giá: Thấp đến Cao</option>
@@ -182,13 +190,13 @@ function ProductsContent() {
                 <div className="text-6xl mb-4">🔍</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Không tìm thấy sản phẩm</h3>
                 <p className="text-gray-500">Vui lòng thử lại với bộ lọc khác.</p>
-                <button 
+                <button
                   onClick={() => {
-                    setPriceRange([0, 1000000]);
+                    setPriceRange([0, 15000000]);
                     setSearchQuery('');
-                    updateUrl('Tất cả');
+                    updateUrl('all');
                   }}
-                  className="mt-4 px-6 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+                  className="mt-4 px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
                 >
                   Xóa bộ lọc
                 </button>

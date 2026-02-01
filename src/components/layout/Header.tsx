@@ -34,10 +34,10 @@ export default function Header({ onCartToggle, cartItemCount = 0 }: HeaderProps)
 
   const menuItems = [
     { label: 'Trang chủ', href: '/' },
-    { label: 'Sản phẩm', href: 'products' }, // Corrected href assuming potential scrolling or page
-    { label: 'Giỏ quà', href: 'gift-baskets' },
-    { label: 'Trái cây nhập khẩu', href: 'products?category=import' },
-    { label: 'Trái cây nội địa', href: 'products?category=local' },
+    { label: 'Trái cây', href: '/products?category=fruit' },
+    { label: 'Giỏ Trái Cây', href: '/products?category=fruit-basket' },
+    { label: 'Cưới Hỏi', href: '/products?category=wedding' },
+    { label: 'Giỏ Quà Tặng', href: '/products?category=gift-basket' },
   ];
 
   return (
