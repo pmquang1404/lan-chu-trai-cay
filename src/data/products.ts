@@ -1,50 +1,50 @@
 import { Product } from '@/types/product';
 
 // Import images
-import img_combo_2_set from '../images/combo_2_set_qua_cao_cap_tet.jpg';
-import img_gio_qua_cao_cap from '../images/gio_qua_cao_cap.jpg';
-import img_gio_qua_cao_cap_2 from '../images/gio_qua_cao_cap_2.jpg';
+import img_combo_2_set from '@/images/combo_2_set_qua_cao_cap_tet.jpg';
+import img_gio_qua_cao_cap from '@/images/gio_qua_cao_cap.jpg';
+import img_gio_qua_cao_cap_2 from '@/images/gio_qua_cao_cap_2.jpg';
 
-import img_gio_trai_cay_1 from '../images/gio_trai_cay_1.jpg';
-import img_gio_trai_cay_2 from '../images/gio_trai_cay_2.jpg';
-import img_gio_trai_cay_3 from '../images/gio_trai_cay_3.jpg';
-import img_gio_trai_cay_4 from '../images/gio_trai_cay_4.jpg';
-import img_gio_trai_cay_5 from '../images/gio_trai_cay_5.jpg';
-import img_gio_trai_cay_6 from '../images/gio_trai_cay_6.jpg';
-import img_gio_trai_cay_7 from '../images/gio_trai_cay_7.jpg';
-import img_gio_trai_cay_8 from '../images/gio_trai_cay_8.jpg';
-import img_gio_trai_cay_9 from '../images/gio_trai_cay_9.jpg';
-import img_gio_trai_cay_10 from '../images/gio_trai_cay_10.jpg';
+import img_gio_trai_cay_1 from '@/images/gio_trai_cay_1.jpg';
+import img_gio_trai_cay_2 from '@/images/gio_trai_cay_2.jpg';
+import img_gio_trai_cay_3 from '@/images/gio_trai_cay_3.jpg';
+import img_gio_trai_cay_4 from '@/images/gio_trai_cay_4.jpg';
+import img_gio_trai_cay_5 from '@/images/gio_trai_cay_5.jpg';
+import img_gio_trai_cay_6 from '@/images/gio_trai_cay_6.jpg';
+import img_gio_trai_cay_7 from '@/images/gio_trai_cay_7.jpg';
+import img_gio_trai_cay_8 from '@/images/gio_trai_cay_8.jpg';
+import img_gio_trai_cay_9 from '@/images/gio_trai_cay_9.jpg';
+import img_gio_trai_cay_10 from '@/images/gio_trai_cay_10.jpg';
 
-import img_set_qua_cao_cap_1 from '../images/set_qua_cao_cap_1.jpg';
-import img_set_qua_cao_cap_hoang_kim from '../images/set_qua_cao_cap_hoang_kim_dai_phuc.jpg';
+import img_set_qua_cao_cap_1 from '@/images/set_qua_cao_cap_1.jpg';
+import img_set_qua_cao_cap_hoang_kim from '@/images/set_qua_cao_cap_hoang_kim_dai_phuc.jpg';
 
-import img_set_qua_tet_1 from '../images/set_qua_tet_1.jpg';
-import img_set_qua_tet_2 from '../images/set_qua_tet_2.jpg';
-import img_set_qua_tet_3 from '../images/set_qua_tet_3.jpg';
-import img_set_qua_tet_dien_tho from '../images/set_qua_tet_dien_tho_ngoc_xuan.jpg';
-import img_set_qua_tet_hoang_kim_cat_tuong from '../images/set_qua_tet_hoang_kim_cat_tuong.jpg';
-import img_set_qua_tet_hong_hac from '../images/set_qua_tet_hong_hac_vuong_phuc.jpg';
-import img_set_qua_tet_hong_phat from '../images/set_qua_tet_hong_phat_dai_xuan.jpg';
-import img_set_qua_tet_hung_thinh from '../images/set_qua_tet_hung_thinh_tan_xuan.jpg';
-import img_set_qua_tet_kim_phuc from '../images/set_qua_tet_kim_phuc_vien_man.jpg';
-import img_set_qua_tet_phu_quy from '../images/set_qua_tet_phu_quy_an_khang.jpg';
-import img_set_qua_tet_phuc_loc from '../images/set_qua_tet_phuc_loc_doan_vien.jpg';
-import img_set_qua_tet_thien_loc from '../images/set_qua_tet_thien_loc_dai_xuan.jpg';
-import img_set_qua_tet_vuong_sac from '../images/set_qua_tet_vuong_sac_kim_xuan.jpg';
-import img_set_qua_tet_xuan_an_nhien from '../images/set_qua_tet_xuan_an_nhien.jpg';
+import img_set_qua_tet_1 from '@/images/set_qua_tet_1.jpg';
+import img_set_qua_tet_2 from '@/images/set_qua_tet_2.jpg';
+import img_set_qua_tet_3 from '@/images/set_qua_tet_3.jpg';
+import img_set_qua_tet_dien_tho from '@/images/set_qua_tet_dien_tho_ngoc_xuan.jpg';
+import img_set_qua_tet_hoang_kim_cat_tuong from '@/images/set_qua_tet_hoang_kim_cat_tuong.jpg';
+import img_set_qua_tet_hong_hac from '@/images/set_qua_tet_hong_hac_vuong_phuc.jpg';
+import img_set_qua_tet_hong_phat from '@/images/set_qua_tet_hong_phat_dai_xuan.jpg';
+import img_set_qua_tet_hung_thinh from '@/images/set_qua_tet_hung_thinh_tan_xuan.jpg';
+import img_set_qua_tet_kim_phuc from '@/images/set_qua_tet_kim_phuc_vien_man.jpg';
+import img_set_qua_tet_phu_quy from '@/images/set_qua_tet_phu_quy_an_khang.jpg';
+import img_set_qua_tet_phuc_loc from '@/images/set_qua_tet_phuc_loc_doan_vien.jpg';
+import img_set_qua_tet_thien_loc from '@/images/set_qua_tet_thien_loc_dai_xuan.jpg';
+import img_set_qua_tet_vuong_sac from '@/images/set_qua_tet_vuong_sac_kim_xuan.jpg';
+import img_set_qua_tet_xuan_an_nhien from '@/images/set_qua_tet_xuan_an_nhien.jpg';
 
-import img_trai_cay_cam from '../images/trai_cay_cam.jpg';
-import img_trai_cay_cherry from '../images/trai_cay_cherry.jpg';
-import img_trai_cay_dau from '../images/trai_cay_dau.jpg';
-import img_trai_cay_ryong from '../images/trai_cay_ryong.jpg';
-import img_trai_cay_tao from '../images/trai_cay_tao.jpg';
+import img_trai_cay_cam from '@/images/trai_cay_cam.jpg';
+import img_trai_cay_cherry from '@/images/trai_cay_cherry.jpg';
+import img_trai_cay_dau from '@/images/trai_cay_dau.jpg';
+import img_trai_cay_ryong from '@/images/trai_cay_ryong.jpg';
+import img_trai_cay_tao from '@/images/trai_cay_tao.jpg';
 
-import img_wedding_long_phung from '../images/wedding_long_phung_hong.jpg';
-import img_wedding_rong_hong from '../images/wedding_rong_hong.jpg';
-import img_wedding_trap_1 from '../images/wedding_trap_1.jpg';
-import img_wedding_trap_2 from '../images/wedding_trap_2.jpg';
-import img_wedding_trap_3 from '../images/wedding_trap_3.jpg';
+import img_wedding_long_phung from '@/images/wedding_long_phung_hong.jpg';
+import img_wedding_rong_hong from '@/images/wedding_rong_hong.jpg';
+import img_wedding_trap_1 from '@/images/wedding_trap_1.jpg';
+import img_wedding_trap_2 from '@/images/wedding_trap_2.jpg';
+import img_wedding_trap_3 from '@/images/wedding_trap_3.jpg';
 
 export const products: Product[] = [
     // --- FRUITS (Trái Cây Tươi) ---
